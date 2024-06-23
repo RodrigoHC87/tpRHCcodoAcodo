@@ -1,4 +1,5 @@
 
+
 // Definir una función genérica para mostrar/ocultar texto
 function mostrarTexto(boton, textoOculto) {
     // Ocultar todos los textos y restablecer el texto de los botones
@@ -54,3 +55,20 @@ abrir.addEventListener('click', () => {
 cerrar.addEventListener('click', () => {
     navegador.classList.remove('visible');
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentLocation = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll('.nav-link');
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentLocation) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
+

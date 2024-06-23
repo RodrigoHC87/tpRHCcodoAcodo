@@ -17,35 +17,44 @@
     <title>Home - Proyecto CaC</title>
 
 
+
 </head>
 
     <body class="container">
 
 
-        <!-- ////////////////  HEADER  ///////////////// HEADER   ///////////////////////////-->
-        <!-- ////////////////  HEADER  ///////////////// HEADER   ///////////////////////////-->
+        <!-- ?             - - - - - - - - - - - -  HEADER  - - - - - - - - - - - -              -->
+        <!-- ?             - - - - - - - - - - - -  HEADER  - - - - - - - - - - - -              -->
         <header>
             <img class="logoheader" src="img/logoFinal.png" alt="imagen-logo" id="logo">
 
             <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
 
             <nav class="navegador" id="navegador">
-
                 <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-square"></i></button>
 
                 <ul class="nav-lista">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#candidatosYpropuestas">Candidatos</a></li>
-                    <li><a href="encuesta.html">Encuesta</a></li>
-                    <li><a href="contactanos.html">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#candidatosYpropuestas" class="nav-link">Candidatos</a></li>
+                    <li><a href="encuesta.html" class="nav-link">Encuesta</a></li>
+                    <li><a href="novedades.html" class="nav-link">Novedades</a></li>
+                    <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </header>
 
 
-        <!-- ////////////////  MAIN  ///////////////// MAIN   ///////////////////////////-->
-        <!-- ////////////////  MAIN  ///////////////// MAIN   ///////////////////////////-->
+        <!-- !             - - - - - - - - - - - - MAIN  - - - - - - - - - - - -                -->
+        <!-- !             - - - - - - - - - - - - MAIN  - - - - - - - - - - - -                -->
         <main>
+            <div id="titulo">
+                <h1  class="tituloPrincipal">Argentinos que escuchan a otros Argentinos</h1>
+                <p class="intro">
+                    En esta oportunidad y considerando el momento que estamos atravesando,
+                    queremos darte algunas noticias en relación a los candidatos presidenciales y sus
+                    propuestas. Pero más que hablarte, ¡preferimos escucharte!
+                </p>
+            </div>
 
             <div id="menu">
                 <div class="tile about-tile">
@@ -303,47 +312,16 @@
             </div>
         </main>
 
-        <!-- ////////////////  FOOTER  ///////////////// FOOTER   ///////////////////////////-->
-        <footer>
-            <div class="logofooter">
-                <img class="imglogofooter" src="img/logoFinal.png" alt="Imagen del logo">
-                <p class="subtitulosFo">Tu aliado para hacer realidad tus ideas</p>
 
-            </div>
+        <!-- *             - - - - - - - - - - - -  FOOTER  - - - - - - - - - - - -                -->
+        <!-- *             - - - - - - - - - - - -  FOOTER  - - - - - - - - - - - -                -->
+        <footer id="footer"></footer>
 
-            <div class="menufooter">
 
-                <div>
-                    <ul>
-                        <li class="menuNavF">NAVEGAR</li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#candidatosYpropuestas">Candidatos</a></li>
-                        <li><a href="encuesta.html">Encuesta</a></li>
-                        <li><a href="contactanos.html">Contacto</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="contactofooter">
-
-                <p class="subtitulosFo subtRedes">Síguenos también aquí</p>
-
-                <ul class="listaredesfooter">
-                    <li><a href="https://www.facebook.com"><i class="bi bi-facebook iconosFooter"></i></a></li>
-                    <li><a href="https://www.x.com"><i class="bi bi-twitter-x iconosFooter"></i></a></li>
-                    <li><a href="https://www.Instagram.com"><i class="bi bi-instagram iconosFooter"></i></a></li>
-                </ul>
-
-            </div>
-
-            <div class="copyfooter">
-                <h5>&copy; 2024 <span>RHC</span> soluciones&reg;. Todos los derechos reservados.</h5>
-            </div>
-        </footer>
-
-        <!-- Nuevo -->
-        <script src="/scripts/main.js"></script>
+        <!-- !             - - - - - - - - - - - -  scripts  - - - - - - - - - - - -                -->
+        <script src="./js/main.js"></script>
+        <script src="./js/header_footer.js"></script>
 
     </body>
+
 </html>

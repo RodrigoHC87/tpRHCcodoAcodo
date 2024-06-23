@@ -71,27 +71,33 @@ header {
     text-align: center;
     position: relative;
     padding-bottom: 5px;
-
-    /* Efecto cuando no paso el mouse sobre el item */
-    &:before {
-        content:"";
-        display: block;
-        width: 0;
-        height: 3px;
-        background: #fff;
-        position: absolute;
-        bottom: 0;
-        transition: all 0.5s;
-    }
+}
+/* Efecto cuando no paso el mouse sobre el item */
+.nav-lista li a::before {
+    content:"";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+}
     /* Efecto cuando paso el mouse sobre el item */
-    &:hover::before {
+.nav-lista li a:hover::before {
         width: 100%;
 }
-}
+
 
 .nav-lista li a::before {
     left: 50%;
     transform: translateX(-50%);
+}
+
+
+.nav-link.active {
+    color: red;
+    font-size: 1.1rem;
 }
 
 
@@ -166,8 +172,6 @@ header {
 .container main {
     grid-area: contenido;
 
-    /* border: 3px dashed black; */
-
     max-width: 1250px;
     margin-left: auto;
     margin-right: auto;
@@ -199,15 +203,8 @@ header {
 }
 
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 
 .contenedorenvol {
-    /* border: 3px dashed navy; */
-
     grid-area: contenedorppal;
 
     display: grid;
@@ -216,7 +213,6 @@ ul {
         "secundario"
         "principal";
 
-    /* box-shadow: 0 0 30px 0 rgb(0, 255, 76); */
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -238,7 +234,6 @@ ul {
 
     background-size: 100% auto;
     margin-top: 90px;
-    /* height: 1400px; */
     grid-area: principal;
 
     border-radius: 25px;
@@ -249,7 +244,6 @@ ul {
     background: rgba(0, 0, 0, .75);
 
     margin:  5% 5%;
-    /* border: 2px solid rebeccapurple; */
     margin-bottom: 50px;
     padding: 3em;
 }
@@ -401,166 +395,6 @@ ul {
 
 /* <!-- /////////////////////////  footer  ////////////////////// footer   ///////////////////////////--> */
 /* <!-- ////////////////  footer  ///////////////// footer   ///////////////////////////--> */
-.container footer {
-    background: #000;
+#footer {
     grid-area: footer;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-
-    box-sizing: border-box;
-    grid-template-areas:
-        "logo navegacion contacto"
-        "footer footer footer";
-}
-
-
-.iconosFooter {
-    font-size: 2rem;
-}
-
-.logofooter,
-.menufooter,
-.contactofooter {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-
-.subtitulosFo {
-    color: #fff;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    font-weight: bold;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.menuNavF {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #fff;
-
-}
-
-.logofooter {
-    grid-area: logo;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-}
-
-.imglogofooter {
-    width: 250px;
-    height: auto;
-}
-
-
-
-.menufooter {
-    grid-area: navegacion;
-
-    box-sizing: border-box;
-
-    display: flex;
-    flex-flow: column wrap;
-
-    align-items: center;
-
-    text-align: left;
-
-}
-
-.menufooter ul {
-    list-style: none;
-    margin: 0;
-}
-
-.menufooter ul li a {
-    text-decoration: none;
-    color: #ececec;
-}
-
-
-
-
-.contactofooter {
-    grid-area: contacto;
-
-    box-sizing: border-box;
-
-}
-
-.contactofooter ul {
-    list-style: none;
-
-    display: flex;
-
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center;
-}
-
-
-.contactofooter ul li {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.contactofooter ul li a {
-    text-decoration: none;
-    color: #ececec ;
-}
-
-
-.copyfooter {
-    grid-area: footer;
-    box-sizing: border-box;
-    justify-self: center;
-    display: flex;
-}
-
-.copyfooter h5 {
-    color: #ececec;
-    margin: 5px;
-}
-
-
-@media screen and (max-width: 550px) {
-    .container footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 75px auto;
-
-        grid-template-areas:
-            "logo navegacion"
-            "contacto contacto"
-            "footer footer";
-    }
-
-    .iconosFooter {
-        font-size: 1.1rem;
-    }
-
-    .copyfooter {
-        margin-top: 0;
-    }
-
-    .listaredesfooter {
-        margin-top: 5px;
-    }
-
-    .copyfooter h5 {
-        margin: 5px;
-        font-size: .6rem;
-    }
-
-    .imglogofooter {
-        width: 180px;
-        height: auto;
-    }
-
-    .subtitulosFo {
-        font-size: .9rem;
-    }
-
 }

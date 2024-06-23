@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const currentLocation = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll('.nav-link');
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentLocation) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
 
 // max-width: 550px -->
 

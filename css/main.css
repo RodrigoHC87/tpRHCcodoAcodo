@@ -31,7 +31,7 @@ ul {
 
 
 
-/* header ////////////////  header  ///////////////// header   ///////////////////////////--> */
+/*  header ////////////////  header  ///////////////// header   ///////////////////////////--> */
 /* header ////////////////  header  ///////////////// header   ///////////////////////////--> */
 
 header {
@@ -68,27 +68,37 @@ header {
     position: relative;
     padding-bottom: 5px;
 
-    /* Efecto cuando no paso el mouse sobre el item */
-    &:before {
-        content:"";
-        display: block;
-        width: 0;
-        height: 3px;
-        background: #fff;
-        position: absolute;
-        bottom: 0;
-        transition: all 0.5s;
-    }
+}
+/* Efecto cuando no paso el mouse sobre el item */
+.nav-lista li a::before {
+    content:"";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+}
     /* Efecto cuando paso el mouse sobre el item */
-    &:hover::before {
+.nav-lista li a:hover::before {
         width: 100%;
 }
-}
+
 
 .nav-lista li a::before {
     left: 50%;
     transform: translateX(-50%);
 }
+
+
+
+.nav-link.active {
+    color: red;
+    font-size: 1.1rem;
+}
+
+
 
 
 .abrir-menu,
@@ -161,22 +171,30 @@ header {
     grid-area: contenido;
 
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
 
     grid-template-areas:
+        "titulo"
         "principal"
         "Candidatos";
 }
 
 
+#titulo {
+    grid-area: titulo;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #A9D4F8;
+    align-items: center;
+
+}
 
 #menu {
     grid-area: principal;
     min-height: 100vh;
     box-sizing: border-box;
+    padding-bottom: 200px;
 }
-
-
 
 #candidatosYpropuestas {
     grid-area: Candidatos;
@@ -184,8 +202,25 @@ header {
 }
 
 
+
 /* ****************************************************************** */
-/* *            ///////////// MENU  ///////////// MENU              *  */
+/* *        ///////////// TITULO  ///////////// TITULO                **/
+/* ****************************************************************** */
+
+.intro {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* ****************************************************************** */
+/* *            ///////////// MENU  ///////////// MENU                **/
 /* ****************************************************************** */
 
 #menu {
@@ -200,8 +235,8 @@ header {
         "encuesta encuesta posts contact";
 
     background: linear-gradient(to top, #FFFFFF 20%,  #A9D4F8 80%);
-
 }
+
 
 #menu .tile {
     height: 100%;
@@ -277,7 +312,7 @@ header {
 
 
 /* ****************************************************************** */
-/* *        ///////////// Encuesta  ///////////// Encuesta            *  */
+/* *    ///////////// Candidatos  //////////////// Candidatos         * */
 /* ****************************************************************** */
 
 /*  NUEVO/////////////////////////////NUEVO/////////////////////////////NUEVO/////////////////////////////NUEVO///////////////////////////// */
@@ -286,7 +321,7 @@ header {
     display: grid;
     grid-template-columns: 1fr;
 
-    grid-template-rows: auto repeat(auto-fill, minmax(382px, auto));
+    grid-template-rows: auto auto;
 
     grid-template-areas:
        "titulo titulo titulo"
@@ -539,166 +574,6 @@ figure.snip0015:hover figcaption::before {
 
 /* <!-- /////////////////////////  footer  ////////////////////// footer   ///////////////////////////--> */
 /* <!-- ////////////////  footer  ///////////////// footer   ///////////////////////////--> */
-.container footer {
-    background: #000;
+#footer {
     grid-area: footer;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-
-    box-sizing: border-box;
-    grid-template-areas:
-        "logo navegacion contacto"
-        "footer footer footer";
-}
-
-
-.iconosFooter {
-    font-size: 2rem;
-}
-
-.logofooter,
-.menufooter,
-.contactofooter {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-
-.subtitulosFo {
-    color: #fff;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    font-weight: bold;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.menuNavF {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #fff;
-
-}
-
-.logofooter {
-    grid-area: logo;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-}
-
-.imglogofooter {
-    width: 250px;
-    height: auto;
-}
-
-
-
-.menufooter {
-    grid-area: navegacion;
-
-    box-sizing: border-box;
-
-    display: flex;
-    flex-flow: column wrap;
-
-    align-items: center;
-
-    text-align: left;
-
-}
-
-.menufooter ul {
-    list-style: none;
-    margin: 0;
-}
-
-.menufooter ul li a {
-    text-decoration: none;
-    color: #ececec;
-}
-
-
-
-
-.contactofooter {
-    grid-area: contacto;
-
-    box-sizing: border-box;
-
-}
-
-.contactofooter ul {
-    list-style: none;
-
-    display: flex;
-
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center;
-}
-
-
-.contactofooter ul li {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.contactofooter ul li a {
-    text-decoration: none;
-    color: #ececec ;
-}
-
-
-.copyfooter {
-    grid-area: footer;
-    box-sizing: border-box;
-    justify-self: center;
-    display: flex;
-}
-
-.copyfooter h5 {
-    color: #ececec;
-    margin: 5px;
-}
-
-
-@media screen and (max-width: 550px) {
-    .container footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 75px auto;
-
-        grid-template-areas:
-            "logo navegacion"
-            "contacto contacto"
-            "footer footer";
-    }
-
-    .iconosFooter {
-        font-size: 1.1rem;
-    }
-
-    .copyfooter {
-        margin-top: 0;
-    }
-
-    .listaredesfooter {
-        margin-top: 5px;
-    }
-
-    .copyfooter h5 {
-        margin: 5px;
-        font-size: .6rem;
-    }
-
-    .imglogofooter {
-        width: 180px;
-        height: auto;
-    }
-
-    .subtitulosFo {
-        font-size: .9rem;
-    }
-
 }

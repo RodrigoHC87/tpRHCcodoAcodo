@@ -1,0 +1,167 @@
+
+
+/* <!-- /////////////////////////  footer  ////////////////////// footer   ///////////////////////////--> */
+/* <!-- ////////////////  footer  ///////////////// footer   ///////////////////////////--> */
+footer {
+    background: #000;
+    grid-area: footer;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    box-sizing: border-box;
+    grid-template-areas:
+        "logo navegacion contacto"
+        "footer footer footer";
+}
+
+
+.iconosFooter {
+    font-size: 2rem;
+}
+
+.logofooter,
+.menufooter,
+.contactofooter {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.subtitulosFo {
+    color: #fff;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.menuNavF {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+
+}
+
+.logofooter {
+    grid-area: logo;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.imglogofooter {
+    width: 250px;
+    height: auto;
+}
+
+
+
+.menufooter {
+    grid-area: navegacion;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column wrap;
+
+    align-items: center;
+
+    text-align: left;
+
+}
+
+.menufooter ul {
+    list-style: none;
+    margin: 0;
+}
+
+.menufooter ul li a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+
+
+
+.contactofooter {
+    grid-area: contacto;
+
+    box-sizing: border-box;
+
+}
+
+.contactofooter ul {
+    list-style: none;
+
+    display: flex;
+
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;
+}
+
+
+.contactofooter ul li {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contactofooter ul li a {
+    text-decoration: none;
+    color: #ececec ;
+}
+
+
+.copyfooter {
+    grid-area: footer;
+    box-sizing: border-box;
+    justify-self: center;
+    display: flex;
+}
+
+.copyfooter h5 {
+    color: #ececec;
+    margin: 5px;
+}
+
+
+@media screen and (max-width: 550px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 75px auto;
+
+        grid-template-areas:
+            "logo navegacion"
+            "contacto contacto"
+            "footer footer";
+    }
+
+    .iconosFooter {
+        font-size: 1.1rem;
+    }
+
+    .copyfooter {
+        margin-top: 0;
+    }
+
+    .listaredesfooter {
+        margin-top: 5px;
+    }
+
+    .copyfooter h5 {
+        margin: 5px;
+        font-size: .6rem;
+    }
+
+    .imglogofooter {
+        width: 180px;
+        height: auto;
+    }
+
+    .subtitulosFo {
+        font-size: .9rem;
+    }
+
+}
